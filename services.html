@@ -1,22 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Our Cleaning Services — Sparkle Clean Co.</title>
-  <meta name="description" content="Spot cleans, deep cleans, and full-service packages for homes and small businesses.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     KEYWORD SPOT #1: TITLE TAG
+     This is your money page — the title should lead with the exact
+     phrase people type into Google.
+     ============================================================ -->
+<title>House Cleaning Services in Your City | Sparkle Clean Co.</title>
+
+<!-- ============================================================
+     KEYWORD SPOT #2: META DESCRIPTION
+     List the actual services here — this often becomes the snippet
+     Google shows, so specificity helps clicks.
+     ============================================================ -->
+<meta name="description" content="Weekly, bi-weekly, deep, and move-out house cleaning services in Your City. Insured cleaners, flexible scheduling, and upfront pricing. Get a free quote.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --teal-deep:#0F4C46;
+    --teal-mid:#17847A;
+    --aqua:#4FD8C4;
+    --sun:#FFD166;
+    --cream:#FAFAF6;
+    --ink:#16211E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.logo{font-family:'Baloo 2',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+
+  nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:1.5rem 3rem;background:var(--teal-deep);
+  }
+  .logo{font-size:1.4rem;font-weight:700;color:var(--cream);letter-spacing:0.02em;}
+  .logo span{color:var(--sun);}
+  .nav-links{display:flex;gap:2.2rem;font-weight:500;font-size:0.98rem;}
+  .nav-links a{color:var(--cream);opacity:0.9;transition:opacity .2s;}
+  .nav-links a.active,.nav-links a:hover{opacity:1;}
+  .nav-cta{background:var(--sun);color:var(--teal-deep);padding:0.65rem 1.4rem;border-radius:999px;font-weight:700;font-size:0.92rem;}
+
+  .banner{
+    background:linear-gradient(120deg, var(--teal-deep) 0%, var(--teal-mid) 60%, var(--aqua) 100%);
+    padding:4rem 3rem 5rem;color:var(--cream);
+  }
+  .banner-eyebrow{font-weight:700;letter-spacing:0.08em;text-transform:uppercase;font-size:0.85rem;color:var(--sun);margin-bottom:0.6rem;}
+
+  /* ============================================================
+     KEYWORD SPOT #3: H1
+     The exact core keyword, phrased the way a person would search it.
+     ============================================================ */
+  .banner h1{font-size:2.8rem;line-height:1.1;max-width:640px;}
+  .banner p{margin-top:1.2rem;max-width:560px;font-size:1.08rem;line-height:1.6;color:rgba(250,250,246,0.92);}
+
+  /* ---------- SERVICE SECTIONS ---------- */
+  .service-block{
+    max-width:1000px;margin:0 auto;padding:4.5rem 3rem;
+    display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;
+  }
+  .service-block:nth-child(even){background:rgba(79,216,196,0.07);}
+  .service-block.reverse .visual{order:2;}
+  .service-block.reverse .copy{order:1;}
+
+  .visual{
+    width:100%;aspect-ratio:4/3;border-radius:24px;
+    display:flex;align-items:center;justify-content:center;font-size:3rem;color:var(--cream);
+  }
+  .service-block:nth-child(1) .visual{background:linear-gradient(135deg,var(--teal-mid),var(--aqua));}
+  .service-block:nth-child(2) .visual{background:linear-gradient(135deg,var(--sun),var(--aqua));}
+  .service-block:nth-child(3) .visual{background:linear-gradient(135deg,var(--teal-deep),var(--teal-mid));}
+  .service-block:nth-child(4) .visual{background:linear-gradient(135deg,var(--aqua),var(--sun));}
+
+  /* ============================================================
+     KEYWORD SPOT #4: H2 PER SERVICE
+     Each service gets its own H2 with a distinct long-tail keyword —
+     this is what lets ONE page rank for several related searches.
+     ============================================================ */
+  .copy h2{color:var(--teal-deep);font-size:1.6rem;margin-bottom:1rem;}
+  .copy p{font-size:1rem;line-height:1.7;color:rgba(22,33,30,0.8);margin-bottom:1rem;}
+  .copy ul{margin-left:1.2rem;color:rgba(22,33,30,0.8);font-size:0.98rem;line-height:1.8;}
+
+  /* ---------- PRICING TEASER ---------- */
+  .pricing-cta{
+    text-align:center;padding:5rem 3rem;
+  }
+  .pricing-cta h2{color:var(--teal-deep);font-size:1.8rem;margin-bottom:1rem;}
+  .pricing-cta p{max-width:520px;margin:0 auto 1.8rem;color:rgba(22,33,30,0.75);}
+  .cta-btn{
+    display:inline-flex;align-items:center;gap:0.9rem;
+    background:var(--teal-deep);color:var(--cream);
+    padding:0.95rem 1.9rem;border-radius:999px;font-weight:700;font-size:1.02rem;
+  }
+  .cta-btn .arrow{
+    width:32px;height:32px;background:var(--sun);color:var(--teal-deep);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;
+  }
+
+  @media (max-width:800px){
+    .banner h1{font-size:2.1rem;}
+    .service-block{grid-template-columns:1fr;}
+    .service-block.reverse .visual,.service-block.reverse .copy{order:0;}
+    nav{flex-direction:column;gap:1rem;padding:1.5rem;}
+  }
+</style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="services.html">Services</a> |
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <h1>Our Services</h1>
-  <ul>
-    <li>Spot Clean — quick touch-ups for busy schedules</li>
-    <li>Deep Clean — thorough top-to-bottom service</li>
-    <li>Full Service — recurring weekly or biweekly care</li>
-  </ul>
+<nav>
+  <div class="logo">SPARKLE<span>CLEAN</span> CO.</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#" class="active">Services</a>
+    <a href="#">Contact</a>
+  </div>
+  <a href="#" class="nav-cta">Get Free Quote</a>
+</nav>
+
+<section class="banner">
+  <div class="banner-eyebrow">Our Services</div>
+  <h1>House Cleaning Services Built Around Your Home</h1>
+
+  <!-- ============================================================
+       KEYWORD SPOT #5: FIRST PARAGRAPH
+       Restate the primary keyword + location once more, and set up
+       the internal links below — pages that link to each other with
+       keyword-rich anchor text help Google understand your site structure.
+       ============================================================ */
+  -->
+  <p>
+    From weekly upkeep to one-time deep cleans, Sparkle Clean Co. offers
+    flexible house cleaning services in Your City. Pick a plan below, or
+    <a href="#" style="color:var(--sun);text-decoration:underline;">get a free quote</a>
+    for something custom.
+  </p>
+</section>
+
+<section class="service-block">
+  <div class="visual">🧽</div>
+  <div class="copy">
+    <h2>Weekly & Bi-Weekly Home Cleaning</h2>
+    <p>
+      Recurring visits that keep your home consistently spotless — kitchens,
+      bathrooms, floors, and dusting, on whatever schedule fits your life.
+    </p>
+    <ul>
+      <li>Weekly, bi-weekly, or monthly plans</li>
+      <li>Same cleaner assigned to your home when possible</li>
+      <li>Eco-friendly products included</li>
+    </ul>
+  </div>
+</section>
+
+<section class="service-block reverse">
+  <div class="visual">✨</div>
+  <div class="copy">
+    <h2>Deep Cleaning Services</h2>
+    <p>
+      A top-to-bottom reset — baseboards, inside appliances, window sills,
+      and every corner that a standard clean skips. A great starting point
+      before switching to a recurring plan.
+    </p>
+    <ul>
+      <li>Inside oven & refrigerator</li>
+      <li>Baseboards, vents, and light fixtures</li>
+      <li>One-time or seasonal booking</li>
+    </ul>
+  </div>
+</section>
+
+<section class="service-block">
+  <div class="visual">📦</div>
+  <div class="copy">
+    <h2>Move-In / Move-Out Cleaning</h2>
+    <p>
+      Hand back your old place spotless, or start fresh in a new one.
+      Landlords and property managers across Your City trust us for
+      turnover cleans between tenants.
+    </p>
+    <ul>
+      <li>Full-unit deep clean</li>
+      <li>Flexible same-week scheduling</li>
+      <li>Receipts provided for security deposits</li>
+    </ul>
+  </div>
+</section>
+
+<section class="service-block reverse">
+  <div class="visual">🏢</div>
+  <div class="copy">
+    <h2>Small Office & Commercial Cleaning</h2>
+    <p>
+      Evening or weekend cleaning for small offices and storefronts —
+      break rooms, restrooms, floors, and common areas kept presentable
+      for clients and staff.
+    </p>
+    <ul>
+      <li>After-hours scheduling available</li>
+      <li>Custom checklist per location</li>
+      <li>Monthly invoicing for businesses</li>
+    </ul>
+  </div>
+</section>
+
+<section class="pricing-cta">
+  <h2>Not sure which plan fits?</h2>
+  <p>Tell us a bit about your home and we'll recommend a schedule and price — no obligation.</p>
+  <a href="#" class="cta-btn">Get Your Free Quote <span class="arrow">→</span></a>
+</section>
+
 </body>
 </html>
